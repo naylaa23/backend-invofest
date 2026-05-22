@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "npx prisma generate && node node_modules/typescript/bin/tsc",
-    "start": "node dist/index.js"
+    "build": "npx prisma generate",
+    "start": "tsx src/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
