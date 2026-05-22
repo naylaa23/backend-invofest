@@ -1,17 +1,19 @@
-import express from 'express';
+import { Router } from "express";
 
-const {
-    getAllPembicara,
-    createPembicara
-} = require('../controllers/pembicaraController');
+import {
+  getAllPembicara,
+  createPembicara,
+  getPembicaraById,
+  updatePembicaraById,
+  deletePembicaraById,
+} from "../controllers/pembicaraController.js";
 
-const router = express.Router();
+const router = Router();
 
-router.get('/', getAllPembicara);
-router.post('/', createPembicara);
-router.get('/:id', getAllPembicara);
-router.put('/:id', createPembicara);
-router.delete('/:id', createPembicara);
-
+router.get("/", getAllPembicara);
+router.post("/", createPembicara);
+router.get("/:id", getPembicaraById);
+router.put("/:id", updatePembicaraById);
+router.delete("/:id", deletePembicaraById);
 
 export default router;
